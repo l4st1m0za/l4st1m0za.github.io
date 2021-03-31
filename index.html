@@ -6,11 +6,10 @@
     <link href="style.css">
     <title>Всякая всячина</title>
     <script>
-      const random = () => {
-        return Math.floor(Math.random() * (number+1));
-      }
-
       const bgChanger = () => {
+        const random = () => {
+          return Math.floor(Math.random() * (number+1));
+        }
         const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
         document.body.style.backgroundColor = rndCol;
       }
@@ -18,8 +17,8 @@
   </head>
   <body>
     <main>
-      <button onclick="bgChanger()"></button>
-      <p>3</p>
+      <button onclick="bgChanger()">CHANGE COLOUR</button>
+      <p>4</p>
     </main>
   </body>
 </html>
