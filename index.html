@@ -9,7 +9,7 @@
       const addOrange = () => {
         document.getElementById('orange').append('апельсиновый сок топ ')
       }
-
+      //_________________________________________________________________________________________________
       const changeColour = () => {
         const random = (number) => {
           return Math.floor(Math.random() * (number+1));
@@ -17,14 +17,51 @@
         const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
         document.body.style.backgroundColor = rndCol;
       }
+      //_________________________________________________________________________________________________
+      const generateField = () => {
+        const tableEl = document.createElement('table');
+
+        tableEl.className = 'table-bordered';
+        for (let i = 0; i < 3; i += 1) {
+          const row = tableEl.insertRow();
+          for (let j = 0; j < 3; j += 1) {
+            const cell = row.insertCell();
+            cell.className = 'py-2 px-3';
+            cell.innerHTML = '<span class="invisible">s</span>';
+          }
+        }
+        return tableEl;
+      };
+
+      const tikTakToe = () => {
+        const table = generateField()
+
+        let currentSymbol = 'x'
+        const switchPlayers = () => {
+          currentSymbol = currentSymbol === 'x' ? 'o' : 'x';
+        }
+
+        table.addEventListener('click', (e) => {
+          if (e.target.textContent === 's') {
+            e.target.textContent = currentSymbol
+          }
+          switchPlayers();
+        })
+
+        const root = document.querySelector('.root')
+        root.append(table)
+      }
     </script>
   </head>
   <body>
     <main>
       <button onclick="addOrange()">ADD TEXT "апельсиновый сок топ"</button>
       <button onclick="changeColour()">CHANGE COLOUR</button>
+      <br>
+      <br>
+      <button onclick="tikTakToe()">КРЕСТИКИ НОЛИКИ</button>
       <div id="orange"></div>
-      <p>8</p>
+      <p>9</p>
     </main>
   </body>
 </html>
