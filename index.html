@@ -6,25 +6,20 @@
     <link href="style.css">
     <title>Всякая всячина</title>
     <script>
-      const addOrange = () => {
-        document.getElementById('orange').append('апельсиновый сок топ ')
-      }
-      //_________________________________________________________________________________________________
       const changeColour = () => {
         const random = (number) => {
           return Math.floor(Math.random() * (number+1));
         }
         const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-        document.body.style.backgroundColor = rndCol;
+        document.getElementById('colourChange').style.backgroundColor = rndCol;
       }
       //_________________________________________________________________________________________________
-      
+
     </script>
   </head>
   <body>
     <main>
-      <button onclick="addOrange()">ADD TEXT "апельсиновый сок топ"</button>
-      <button onclick="changeColour()">CHANGE COLOUR</button>
+      <button id="colourChange"onclick="changeColour()">CHANGE COLOUR</button>
       <div id="orange"></div>
       <p>9</p>
     </main>
