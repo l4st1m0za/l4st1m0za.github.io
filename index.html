@@ -15,11 +15,11 @@
       }
       //_________________________________________________________________________________________________
       const counterOfClicks = () => {
-        for(let i = 0; i<=11; i++) {
-          if (i <= 10)
-          document.getElementById('clicker').innerHTML = `YOU HAVE CLICKED ME ${i} TIMES`
-        } else {
-          document.getElementById('clicker').innerHTML = 'OK THAT\'S TOO MUCH'
+        let count = 0;
+        document.getElementById('clicker').innerHTML = `YOU HAVE CLICKED ME ${count} TIMES`
+        count+=1
+        if (count > 10) {
+          document.getElementById('clicker').innerHTML = `OK THAT\'S TO MUCH`
         }
       }
     </script>
@@ -28,7 +28,7 @@
     <main>
       <button id="colourChange" onclick="changeColour()">CHANGE COLOUR</button>
       <button id="clicker" onclick="counterOfClicks()">YOU HAVE CLICKED ME 0 TIMES</button>
-      <p>11</p>
+      <p>12</p>
     </main>
   </body>
 </html>
