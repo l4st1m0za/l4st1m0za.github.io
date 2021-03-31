@@ -14,8 +14,8 @@
         document.getElementById('colourChange').style.backgroundColor = rndCol;
       }
       //_________________________________________________________________________________________________
+      let count = 0;
       const counterOfClicks = () => {
-        let count = 0;
         document.getElementById('clicker2').innerHTML = `YOU HAVE CLICKED ME ${count} TIMES`
         count+=1
         if (count > 10) {
@@ -27,9 +27,9 @@
   <body>
     <main>
       <button id="colourChange" onclick="changeColour()">CHANGE COLOUR</button>
-      <button id="clicker" onclick="counterOfClicks()">YOU HAVE CLICKED ME 0 TIMES</button>
+      <button id="clicker" onclick="counterOfClicks()">COUNTER OF YOUR CLICKS</button>
       <div id="clicker2"></div>
-      <p>13</p>
+      <p>14</p>
     </main>
   </body>
 </html>
