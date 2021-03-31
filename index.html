@@ -16,10 +16,10 @@
       //_________________________________________________________________________________________________
       const counterOfClicks = () => {
         let count = 0;
-        document.getElementById('clicker').innerHTML = `YOU HAVE CLICKED ME ${count} TIMES`
+        document.getElementById('clicker2').innerHTML = `YOU HAVE CLICKED ME ${count} TIMES`
         count+=1
         if (count > 10) {
-          document.getElementById('clicker').innerHTML = `OK THAT\'S TO MUCH`
+          document.getElementById('clicker2').innerHTML = `OK THAT\'S TO MUCH`
         }
       }
     </script>
@@ -28,7 +28,8 @@
     <main>
       <button id="colourChange" onclick="changeColour()">CHANGE COLOUR</button>
       <button id="clicker" onclick="counterOfClicks()">YOU HAVE CLICKED ME 0 TIMES</button>
-      <p>12</p>
+      <div id="clicker2"></div>
+      <p>13</p>
     </main>
   </body>
 </html>
