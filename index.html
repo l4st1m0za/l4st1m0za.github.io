@@ -22,14 +22,19 @@
         }
         ++count
       }
+      //___________________________________________________________________________________________________
+      const bestColour = () => {
+        document.body.style.backgroundColor = 'E6E6FA'
+      }
     </script>
   </head>
   <body>
     <main>
       <button id="colourChange" onclick="changeColour()">CHANGE COLOUR</button>
       <button id="clicker" onclick="counterOfClicks()">COUNTER OF YOUR CLICKS</button>
-      <div id="clicker2"></div>
-      <p>18</p>
+      <button id="bestColour">CHANGE TO THE BEST COLOUR</button>
+      <div id="clicker2" onclick="bestColour()"></div>
+      <p>19</p>
     </main>
   </body>
 </html>
