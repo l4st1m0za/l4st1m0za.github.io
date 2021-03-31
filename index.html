@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css">
     <title>Всякая всячина</title>
+    <script>
+      const button = document.querySelector('button')
+      const random = () => {
+        return Math.floor(Math.random() * (number+1));
+      }
+
+      const bgChanger = () => {
+        const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        document.body.style.backgroundColor = rndCol;
+      }
+      button.onclick(bgChanger)
+    </script>
   </head>
   <body>
     <main>
       <input type="button" id="button" value="CHANGE COLOUR">
-      <script>
-        const button = document.querySelector('button')
-        const random = () => {
-          return Math.floor(Math.random() * (number+1));
-        }
-
-        const bgChanger = () => {
-          const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-          document.body.style.backgroundColor = rndCol;
-        }
-        button.onclick(bgChanger)
-      </script>
-      <p>1</p>
+      <p>2</p>
     </main>
   </body>
 </html>
