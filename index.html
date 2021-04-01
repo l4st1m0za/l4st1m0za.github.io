@@ -12,8 +12,6 @@
       <h2>Вставте свой текст</h2>
       <input id="txtInput" size="40" placeholder="Вставьте ваш текст">
       <br>
-      <button id="answBtn">Нажмите, чтобы получить правильную строку</button>
-      <br>
       <p id="answPlace"></p>
       <p>Кол-во изменений 35</p>
     </main>
@@ -24,12 +22,6 @@
       input.addEventListener('input', (e) => {
         const log = document.getElementById('answPlace')
         log.textContent = e.target.value.toLowerCase();
-      })
-
-      const btn = document.getElementById('answBtn');
-      btn.addEventListener('click', () => {
-        const div = document.getElementById('answPlace')
-        div.innerHTML = answ;
       })
     </script>
   </body>
