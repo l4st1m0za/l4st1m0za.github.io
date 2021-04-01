@@ -43,7 +43,7 @@
           <option value="Af">Afghanistan</option>
         </select>
         <br>
-        <button type="submit" id="sendBtn" disabled>Отправить</button>
+        <button type="submit" id="sendBtn">Отправить</button>
       </form>
     </main>
     <script>
@@ -53,14 +53,7 @@
         log.textContent = e.target.value.toLowerCase();
       })
 
-      const name = document.getElementById('name')
-      const surname = document.getElementById('surname')
-      const age = document.getElementById('age')
-      const country = document.getElementById('country')
-      const submitBtn = document.getElementById('sendBtn')
-      if(name.value.length < 1 || surname.value.length < 1 || age.value.length < 1 || country.value.length < 1) {
-        submitBtn.classList.remove('disable')
-      }
+
     </script>
   </body>
 </html>
