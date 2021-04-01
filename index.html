@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <h1>Данный сайт поможет вам спраиться с текстом полностью написанным на CAPS LOCK`е</h1>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css">
     <title>Всякая всячина</title>
     <script>
-      const changeColour = () => {
-        const random = (number) => {
-          return Math.floor(Math.random() * (number+1));
-        }
-        const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-        document.getElementById('colourChange').style.backgroundColor = rndCol;
-      }
-      document.getElementById('colourChange').addEventListener('click', changeColour)
-      //_________________________________________________________________________________________________
-      let count = 1;
-      const counterOfClicks = () => {
-        document.getElementById('clicker2').innerHTML = `YOU HAVE CLICKED ME ${count} TIMES`
-        if (count > 10) {
-          document.getElementById('clicker2').innerHTML = `OK THAT\'S TO MUCH`
-        }
-        ++count
-      }
-      //___________________________________________________________________________________________________
-      const bestColour = () => {
-        document.body.style.backgroundColor = '#b57edc'
-      }
+      let answ;
+
+      const form = document.getElementById('txtInput')
+      form.addEventListener('submit' (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target)
+        answ = fromData.toLowerCase()
+      })
+
+      const btn = document.getElementById('answBtn');
+      btn.addEventListener('click', () => {
+        const div = document.getElementById('answPlace')
+        div.innerHTML = answ;
+      })
     </script>
   </head>
   <body>
     <main>
-      <button id="colourChange">CHANGE COLOUR</button>
-      <button id="clicker" onclick="counterOfClicks()">COUNTER OF YOUR CLICKS</button>
-      <button id="bestColour" onclick="bestColour()">CHANGE TO THE BEST COLOUR</button>
-      <div id="clicker2"></div>
-      <p>26</p>
+      <h2>Вставте свой текст</h2>
+      <input id="txtInput" size="40">
+      <br>
+      <button id="answBtn">Нажмите, чтобы получить правильную строку</button>
+      <br>
+      <div id="answPlace"></div>
+      <p>Кол-во изменений 27</p>
     </main>
   </body>
 </html>
