@@ -13,6 +13,7 @@
         const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
         document.getElementById('colourChange').style.backgroundColor = rndCol;
       }
+      document.getElementById('colourChange').addEventListener('click', changeColour)
       //_________________________________________________________________________________________________
       let count = 1;
       const counterOfClicks = () => {
@@ -30,11 +31,11 @@
   </head>
   <body>
     <main>
-      <button id="colourChange" onclick="changeColour()">CHANGE COLOUR</button>
+      <button id="colourChange">CHANGE COLOUR</button>
       <button id="clicker" onclick="counterOfClicks()">COUNTER OF YOUR CLICKS</button>
       <button id="bestColour" onclick="bestColour()">CHANGE TO THE BEST COLOUR</button>
       <div id="clicker2"></div>
-      <p>25</p>
+      <p>26</p>
     </main>
   </body>
 </html>
