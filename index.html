@@ -10,21 +10,20 @@
   <body>
     <main>
       <h2>Вставте свой текст</h2>
-      <input id="txtInput" size="40">
+      <input id="txtInput" size="40" placeholder="Вставьте ваш текст">
       <br>
       <button id="answBtn">Нажмите, чтобы получить правильную строку</button>
       <br>
       <p id="answPlace"></p>
-      <p>Кол-во изменений 34 </p>
+      <p>Кол-во изменений 35</p>
     </main>
     <script>
       let answ = '';
 
       const input = document.getElementById('txtInput')
       input.addEventListener('input', (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target)
-        answ = formData.toLowerCase().trim()
+        const log = document.getElementById('answPlace')
+        log.textContent = e.target.value.toLowerCase();
       })
 
       const btn = document.getElementById('answBtn');
