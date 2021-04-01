@@ -15,13 +15,13 @@
       <button id="answBtn">Нажмите, чтобы получить правильную строку</button>
       <br>
       <p id="answPlace"></p>
-      <p>Кол-во изменений 33</p>
+      <p>Кол-во изменений 34 </p>
     </main>
     <script>
       let answ = '';
 
-      const form = document.getElementById('txtInput')
-      form.addEventListener('submit', (e) => {
+      const input = document.getElementById('txtInput')
+      input.addEventListener('input', (e) => {
         e.preventDefault();
         const formData = new FormData(e.target)
         answ = formData.toLowerCase().trim()
