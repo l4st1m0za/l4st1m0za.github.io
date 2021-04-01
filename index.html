@@ -13,7 +13,7 @@
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new FormData(e.target)
-        answ = formData.toLowerCase()
+        answ = formData.toLowerCase().trim()
       })
 
       const btn = document.getElementById('answBtn');
@@ -31,7 +31,7 @@
       <button id="answBtn">Нажмите, чтобы получить правильную строку</button>
       <br>
       <p id="answPlace"></p>
-      <p>Кол-во изменений 30</p>
+      <p>Кол-во изменений 31p</p>
     </main>
   </body>
 </html>
