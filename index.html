@@ -16,11 +16,9 @@
       <p>Кол-во изменений 35</p>
     </main>
     <script>
-      let answ = '';
-
+      const log = document.getElementById('answPlace')
       const input = document.getElementById('txtInput')
       input.addEventListener('input', (e) => {
-        const log = document.getElementById('answPlace')
         log.textContent = e.target.value.toLowerCase();
       })
     </script>
