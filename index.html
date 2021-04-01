@@ -15,23 +15,23 @@
       <button id="answBtn">Нажмите, чтобы получить правильную строку</button>
       <br>
       <p id="answPlace"></p>
-      <p>Кол-во изменений 32</p>
-      <script>
-        let answ = '';
-
-        const form = document.getElementById('txtInput')
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const formData = new FormData(e.target)
-          answ = formData.toLowerCase().trim()
-        })
-
-        const btn = document.getElementById('answBtn');
-        btn.addEventListener('click', () => {
-          const div = document.getElementById('answPlace')
-          div.innerHTML = answ;
-        })
-      </script>
+      <p>Кол-во изменений 33</p>
     </main>
+    <script>
+      let answ = '';
+
+      const form = document.getElementById('txtInput')
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target)
+        answ = formData.toLowerCase().trim()
+      })
+
+      const btn = document.getElementById('answBtn');
+      btn.addEventListener('click', () => {
+        const div = document.getElementById('answPlace')
+        div.innerHTML = answ;
+      })
+    </script>
   </body>
 </html>
