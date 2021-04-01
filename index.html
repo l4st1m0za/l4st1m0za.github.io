@@ -43,17 +43,27 @@
           <option value="Af">Afghanistan</option>
         </select>
         <br>
-        <button type="submit" id="sendBtn">Отправить</button>
+        <button type="submit" id="sendBtn" disabled>Отправить</button>
       </form>
     </main>
-    <script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
       const log = document.getElementById('answPlace')
       const input = document.getElementById('txtInput')
       input.addEventListener('input', (e) => {
         log.textContent = e.target.value.toLowerCase();
       })
 
-
+      const checkParams = () => {
+        const name = $('#name').val
+        const surname = $('#surname').val();
+        const phone = $('#age').val();
+        const country = $('#country').val()
+        if (name.length !== 0 || surname.length !== 0 || age.length !== 0 || country.length !== 0) {
+            $('#sendBtn').removeAttr('disabled')
+        } else {
+          $('#sendBtn').attr('disabled', 'disabled');
+        }
+      }
     </script>
   </body>
 </html>
