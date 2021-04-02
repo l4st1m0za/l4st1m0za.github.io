@@ -13,7 +13,7 @@
       <input id="txtInput" size="40" placeholder="Вставьте ваш текст">
       <br>
       <p id="answPlace"></p>
-      <p>Кол-во изменений 46</p>
+      <p>Кол-во изменений 47</p>
       <br>
       <br>
       <form class="registration">
@@ -52,6 +52,13 @@
       input.addEventListener('input', (e) => {
         log.textContent = e.target.value.toLowerCase();
       })
+
+
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        const formData = new FormData(e.target)
+        log.textContent = e.target.value
+      });
     </script>
   </body>
 </html>
