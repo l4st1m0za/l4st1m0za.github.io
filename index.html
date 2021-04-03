@@ -13,7 +13,7 @@
       <input id="txtInput" size="40" placeholder="Insert your txt">
       <br>
       <p id="answPlace"></p>
-      <p>Changes done: 62</p>
+      <p>Changes done: 63</p>
       <br>
       <br>
       <p>Send feedback please</p>
@@ -66,26 +66,15 @@
         const about = document.querySelector('#aboutPerson')
         const country = document.querySelector('#country').value
         const div = document.createElement('div')
-        const answWithoutPatr = `
-        <p>Feedback has been sent</p>
-        <div>Name: ${name}</div>
-        <div>Surname: ${surname}</div>
-        <div>Birth date: ${age}</div>
-        <div>About myself: ${about}
-        <br>
-        <textarea>${about}</textarea>
-        <div>Country: ${country}</div>
-    `
-        const answWithPatr = `<p>Feedback has been sent</p>
+        div.innerHTML = `<p>Feedback has been sent</p>
         <div>Name: ${name}</div>
         <div>Surname: ${surname}</div>
         <div>Patronymic: ${patronymic}</div>
         <div>Birth date: ${age}</div>
         <div>About myself: ${about}
         </div>
-        <div>Country: ${country}</div>
-`
-        div.innerHTML = patronymic.value.length > 0 ? answWithPatr : answWithoutPatr;
+        <div>Country: ${country}</div>`
+
         form.replaceWith(div)
       });
     </script>
