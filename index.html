@@ -37,12 +37,12 @@
         <p>Choose your country</p>
         <select id="country" name="country" required>
           <option value="">Country...</option>
-          <option value="In">India</option>
-          <option value="Ukr">Ukraine</option>
-          <option value="Ru">Russia</option>
+          <option value="India">India</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="Russia">Russia</option>
           <option value="USA">USA</option>
-          <option value="Bri">Britain</option>
-          <option value="Af">Afghanistan</option>
+          <option value="Britain">Britain</option>
+          <option value="Afghanistan">Afghanistan</option>
         </select>
         <br>
         <button type="submit" id="sendBtn">Submit</button>
@@ -71,7 +71,9 @@
         <div>Name: ${name}</div>
         <div>Surname: ${surname}</div>
         <div>Birth date: ${age}</div>
-        <textarea>About myself: ${about}</textarea>
+        <div>About myself: ${about}
+        <br>
+        <textarea>${about}</textarea>
         <div>Country: ${country}</div>
     `
         const answWithPatr = `<p>Feedback has been sent</p>
@@ -79,10 +81,13 @@
         <div>Surname: ${surname}</div>
         <div>Patronymic: ${patronymic}</div>
         <div>Birth date: ${age}</div>
-        <textarea>About myself: ${about}</textarea>
+        <div>About myself: ${about}
+        <br>
+        <textarea>${about}</textarea>
+        </div>
         <div>Country: ${country}</div>
 `
-        div.innerHTML = patronymic.length > 0 ? answWithPatr : answWithoutPatr;
+        div.innerHTML = patronymic.value.length > 0 ? answWithPatr : answWithoutPatr;
         form.replaceWith(div)
       });
     </script>
