@@ -10,10 +10,10 @@
   <body>
     <main>
       <h2>Paste your txt</h2>
-      <input id="txtInput" size="40" placeholder="Вставьте ваш текст">
+      <input id="txtInput" size="40" placeholder="Insert your txt">
       <br>
       <p id="answPlace"></p>
-      <p>Changes done: 60</p>
+      <p>Changes done: 61</p>
       <br>
       <br>
       <p>Send feedback please</p>
@@ -61,16 +61,28 @@
         e.preventDefault()
         const name = document.querySelector('#name').value
         const surname = document.querySelector('#surname').value
+        const patronymic = document.querySelector('#patronymic')
         const age = document.querySelector('#age').value
+        const about = document.querySelector('#aboutPerson')
         const country = document.querySelector('#country').value
         const div = document.createElement('div')
-        div.innerHTML = `
+        const answWithoutPatr = `
         <p>Feedback has been sent</p>
         <div>Name: ${name}</div>
         <div>Surname: ${surname}</div>
         <div>Birth date: ${age}</div>
+        <textarea>About myself: ${about}</textarea>
         <div>Country: ${country}</div>
     `
+        const answWithPatr = `<p>Feedback has been sent</p>
+        <div>Name: ${name}</div>
+        <div>Surname: ${surname}</div>
+        <div>Patronymic: ${patronymic}</div>
+        <div>Birth date: ${age}</div>
+        <textarea>About myself: ${about}</textarea>
+        <div>Country: ${country}</div>
+`
+        div.innerHTML = patronymic.length > 0 ? answWithPatr : answWithoutPatr;
         form.replaceWith(div)
       });
     </script>
