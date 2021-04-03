@@ -13,7 +13,7 @@
       <input id="txtInput" size="40" placeholder="Вставьте ваш текст">
       <br>
       <p id="answPlace"></p>
-      <p>Кол-во изменений 48</p>
+      <p>Кол-во изменений 49</p>
       <br>
       <br>
       <form class="registration">
@@ -56,9 +56,21 @@
 
       const form = document.querySelector('form');
       form.addEventListener('submit', (e) => {
-        const formData = new FormData(e.target)
-        log.textContent = formData.get(name)
-
+        e.preventDefault()
+        const form = document.querySelector('form')
+        const name = document.querySelector('#name').value
+        const surname = document.querySelector('#surname').value
+        const age = document.querySelector('#age').value
+        const country = document.querySelector('#country').value
+        const div = document.createElement('div')
+        div.innerHTML = `
+ <p>Данные были отправлены</p>
+ <div>Имя: ${name}</div>
+ <div>Фамилия: ${surname}</div>
+ <div>Возраст: ${age}</div>
+ <div>Страна: ${country}</div>
+`
+        form.replaceWith(div)
       });
     </script>
   </body>
