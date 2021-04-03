@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="eng">
   <head>
-    <h1>Данный сайт поможет вам спраиться с текстом полностью написанным на CAPS LOCK`е</h1>
+    <h1>This website will deal with your Caps Lock txt :)</h1>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css">
@@ -9,30 +9,30 @@
   </head>
   <body>
     <main>
-      <h2>Вставте свой текст</h2>
+      <h2>Paste your txt</h2>
       <input id="txtInput" size="40" placeholder="Вставьте ваш текст">
       <br>
       <p id="answPlace"></p>
-      <p>Кол-во изменений 54</p>
+      <p>Changes don: 55</p>
       <br>
       <br>
       <form class="registration">
-        <input name="name" id="name" placeholder="Введите свое имя"  size="40" required>
+        <input name="name" id="name" placeholder="Insert your name"  size="40" required>
         <br>
         <br>
-        <input name="surname" id="surname" placeholder="Введите свою фамилию" size="40" required>
+        <input name="surname" id="surname" placeholder="Insert your surname" size="40" required>
         <br>
         <br>
-        <input name="patronymic" id="patronymic" placeholder="Введите свое отчество" size="40">
+        <input name="patronymic" id="patronymic" placeholder="Insert your patronymic" size="40">
         <br>
         <br>
-        <input name="aboutPerson" id="aboutPerson" placeholder="О себе" size="40">
+        <input name="aboutPerson" id="aboutPerson" placeholder="About myself" size="40">
         <br>
         <br>
-        <input name="age" id="age" type="date" placeholder="Введите свой возраст" size="40" required>
+        <input name="age" id="age" type="date" placeholder="Insert your age" size="40" required>
         <br>
         <br>
-        <p>Выберите страну</p>
+        <p>Choose your country</p>
         <select id="country" name="country" required>
           <option value="">Country...</option>
           <option value="In">India</option>
@@ -43,7 +43,7 @@
           <option value="Af">Afghanistan</option>
         </select>
         <br>
-        <button type="submit" id="sendBtn" disabled>Отправить</button>
+        <button type="submit" id="sendBtn">Submit</button>
       </form>
     </main>
     <script>
@@ -71,11 +71,6 @@
     `
         form.replaceWith(div)
       });
-
-      const btn = document.getElementById('sendBtn')
-      if(name.length !== 0 && surname.length !== 0 && age.length !== 0) {
-        btn.removeAttribute('disabled')
-      }
     </script>
   </body>
 </html>
