@@ -13,7 +13,7 @@
       <input id="txtInput" size="40" placeholder="Вставьте ваш текст">
       <br>
       <p id="answPlace"></p>
-      <p>Changes don: 57</p>
+      <p>Changes done: 58</p>
       <br>
       <br>
       <form class="registration">
@@ -54,14 +54,14 @@
       })
 
       const form = document.querySelector('form');
-      const name = document.querySelector('#name').value
-      const surname = document.querySelector('#surname').value
-      const age = document.querySelector('#age').value
-      const country = document.querySelector('#country').value
-      const div = document.createElement('div')
-
+      
       form.addEventListener('submit', (e) => {
         e.preventDefault()
+        const name = document.querySelector('#name').value
+        const surname = document.querySelector('#surname').value
+        const age = document.querySelector('#age').value
+        const country = document.querySelector('#country').value
+        const div = document.createElement('div')
         div.innerHTML = `
         <p>Feedback has been sent</p>
         <div>Name: ${name}</div>
