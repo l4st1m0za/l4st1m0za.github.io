@@ -13,7 +13,7 @@
       <input id="txtInput" size="40" placeholder="Insert your txt">
       <br>
       <p id="answPlace"></p>
-      <p>Changes done: 65</p>
+      <p>Changes done: 66</p>
       <br>
       <br>
       <p>Send feedback please</p>
@@ -61,9 +61,9 @@
         e.preventDefault()
         const name = document.querySelector('#name').value
         const surname = document.querySelector('#surname').value
-        const patronymic = document.querySelector('#patronymic')
+        const patronymic = document.querySelector('#patronymic').value
         const age = document.querySelector('#age').value
-        const about = document.querySelector('#aboutPerson')
+        const about = document.querySelector('#aboutPerson').value
         const country = document.querySelector('#country').value
         const div = document.createElement('div')
         div.innerHTML = `<p>Feedback has been sent</p>
