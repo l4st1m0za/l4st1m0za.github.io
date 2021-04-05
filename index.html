@@ -45,7 +45,7 @@
           <option value="Afghanistan">Afghanistan</option>
         </select>
         <br>
-        <button type="submit" id="sendBtn" disabled>Submit</button>
+        <button type="submit" id="sendBtn">Submit</button>
       </form>
     </main>
     <script>
@@ -60,24 +60,32 @@
 
       form.addEventListener('submit', (e) => {
         e.preventDefault()
-        const name = document.querySelector('#name').value
-        const surname = document.querySelector('#surname').value
-        const patronymic = document.querySelector('#patronymic').value
-        const age = document.querySelector('#age').value
-        const about = document.querySelector('#aboutPerson').value
-        const country = document.querySelector('#country').value
+        const formData = new FormData(e.target)
         const div = document.createElement('div')
         div.innerHTML = `<p>Feedback has been sent</p>
-        <div>Name: ${name}</div>
-        <div>Surname: ${surname}</div>
-        <div>Patronymic: ${patronymic}</div>
-        <div>Birth date: ${age}</div>
-        <div>About myself: ${about}</div>
-        <div>Country: ${country}</div>
-`
-
+        <div>Name: ${formData.get('name')}</div>
+        <div>Surname: ${formData.get('surname')}</div>
+        <div>Patronymic: ${formData.get('patronymic')}</div>
+        <div>Birth date: ${formData.get('age')}</div>
+        <div>About myself: ${formData.get('about')}</div>
+        <div>Country: ${formData.get('country')}</div>`
         form.replaceWith(div)
       });
+      const btn = document.getElementById('sendBtn')
+      form.addEventListener('change', (e) => {
+        console.log(e.target)
+        const formData = new FormData(form)
+        const name = formData.get('name')
+        const surname = formData.get('surname')
+        const age = formData.get('age')
+        const country = formData.get('country')
+        if (name.length > 0 && surname.length > 0 && age.length > 0 && country.length > 0) {
+          btn.removeAttribute('disabled')
+        } else {
+          btn.setAttribute('disabled', 'disabled')
+        }
+      })
+
     </script>
   </body>
 </html>
