@@ -13,7 +13,7 @@
       <textarea id="txtInput" size="40" placeholder="Insert your txt"> </textarea>
       <br>
       <p id="answPlace"></p>
-      <p>Changes done: 71</p>
+      <p>Changes done: 72</p>
       <br>
       <br>
       <p>Send feedback please</p>
@@ -45,7 +45,7 @@
           <option value="Afghanistan">Afghanistan</option>
         </select>
         <br>
-        <button type="submit" id="sendBtn">Submit</button>
+        <button type="submit" id="sendBtn" disabled>Submit</button>
       </form>
     </main>
     <script>
@@ -56,15 +56,16 @@
       })
 
       const form = document.querySelector('form');
-      const name = document.querySelector('#name').value
-      const surname = document.querySelector('#surname').value
-      const patronymic = document.querySelector('#patronymic').value
-      const age = document.querySelector('#age').value
-      const about = document.querySelector('#aboutPerson').value
-      const country = document.querySelector('#country').value
+
 
       form.addEventListener('submit', (e) => {
         e.preventDefault()
+        const name = document.querySelector('#name').value
+        const surname = document.querySelector('#surname').value
+        const patronymic = document.querySelector('#patronymic').value
+        const age = document.querySelector('#age').value
+        const about = document.querySelector('#aboutPerson').value
+        const country = document.querySelector('#country').value
         const div = document.createElement('div')
         div.innerHTML = `<p>Feedback has been sent</p>
         <div>Name: ${name}</div>
@@ -78,7 +79,16 @@
         form.replaceWith(div)
       });
 
-
+      const btn = document.getElementById('sendBtn')
+      form.addEventListener('submit', () => {
+        const name = document.querySelector('#name').value
+        const surname = document.querySelector('#surname').value
+        const age = document.querySelector('#age').value
+        const country = document.querySelector('#country').value
+        if(name.length > 0 && surname.length > 0 && age.length > 0 && country.length > 0) {
+          btn.removeAttribute('disabled')
+        }
+      })
     </script>
   </body>
 </html>
