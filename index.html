@@ -10,7 +10,7 @@
   <body>
     <main>
       <h2>Paste your txt</h2>
-      <textarea id="txtInput" size="40" placeholder="Insert your txt"> </textarea>
+      <textarea id="txtInput" placeholder="Insert your txt"> </textarea>
       <br>
       <p id="answPlace"></p>
       <br>
@@ -61,18 +61,22 @@
         e.preventDefault()
         const formData = new FormData(e.target)
         const div = document.createElement('div')
-        div.innerHTML = `<p>Feedback has been sent</p>
+        div.innerHTML = `
+        <div id="feedbackData">
+        <p>Feedback has been sent</p>
         <div>Name: ${formData.get('name')}</div>
         <div>Surname: ${formData.get('surname')}</div>
         <div>Patronymic: ${formData.get('patronymic')}</div>
         <div>Birth date: ${formData.get('age')}</div>
         <div>About myself: ${formData.get('aboutPerson')}</div>
-        <div>Country: ${formData.get('country')}</div>`
+        <div>Country: ${formData.get('country')}</div>
+        <br>
+        <button onclick="change()">Edit Profile</button>
+        </div>`
         form.replaceWith(div)
       });
       const btn = document.getElementById('sendBtn')
       form.addEventListener('change', (e) => {
-        console.log(e.target)
         const formData = new FormData(form)
         const name = formData.get('name')
         const surname = formData.get('surname')
@@ -84,7 +88,11 @@
           btn.setAttribute('disabled', 'disabled')
         }
       })
-
+      let counter = 0
+      function change() {
+        const div = document.getElementById('feedbackData')
+        div.replaceWith(form)
+      }
     </script>
   </body>
 </html>
