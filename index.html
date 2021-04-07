@@ -72,10 +72,12 @@
         <div>Country: ${formData.get('country')}</div>
         <br>
         <button onclick="change()">Edit Profile</button>
+        <button onclick="save()">Save changes</button>
         </div>`
         form.replaceWith(div)
       });
       const btn = document.getElementById('sendBtn')
+
       form.addEventListener('change', (e) => {
         const formData = new FormData(form)
         const name = formData.get('name')
@@ -88,11 +90,26 @@
           btn.setAttribute('disabled', 'disabled')
         }
       })
+
       let counter = 0
       function change() {
         counter += 1
         const div = document.getElementById('feedbackData')
         counter > 2 ? div.innerHTML = '<p>Ok that\'s too much for you</p>' : div.replaceWith(form)
+      }
+      function save() {
+        const formData = new FormData(form)
+        console.log(formData.get('name'))
+        const div = document.getElementById('feedbackData')
+        div.innerHTML = `
+        <p>Profile has been saved</p>
+        <div>Name: ${formData.get('name')}</div>
+        <div>Surname: ${formData.get('surname')}</div>
+        <div>Patronymic: ${formData.get('patronymic')}</div>
+        <div>Birth date: ${formData.get('age')}</div>
+        <div>About myself: ${formData.get('aboutPerson')}</div>
+        <div>Country: ${formData.get('country')}</div>
+        `
       }
     </script>
   </body>
